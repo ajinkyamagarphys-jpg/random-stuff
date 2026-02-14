@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aditya! 🎉</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-animated {
+            background: linear-gradient(-45deg, #ff6b9d, #c44569, #ffa500, #ffb6c1);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating balloons */
+        .balloon {
+            position: fixed;
+            width: 40px;
+            height: 50px;
+            border-radius: 50% 50% 50% 0;
+            opacity: 0.8;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .balloon-red {
+            background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .balloon-yellow {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .balloon-purple {
+            background: linear-gradient(135deg, #da70d6, #ff69b4);
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .balloon-green {
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        .balloon-orange {
+            background: linear-gradient(135deg, #ffa500, #ffb84d);
+            left: 90%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0% {
+                bottom: -100px;
+                opacity: 0;
+                transform: rotate(0deg) translateX(0);
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                bottom: 120vh;
+                opacity: 0;
+                transform: rotate(360deg) translateX(100px);
+            }
+        }
+
+        /* Confetti animation */
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+        }
+
+        /* Heart animation */
+        .heart {
+            display: inline-block;
+            animation: heartbeat 1.2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Glow effect */
+        .glow-text {
+            text-shadow: 0 0 10px rgba(255, 107, 157, 0.8),
+                         0 0 20px rgba(255, 107, 157, 0.6),
+                         0 0 30px rgba(255, 107, 157, 0.4);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255, 107, 157, 0.8),
+                             0 0 20px rgba(255, 107, 157, 0.6),
+                             0 0 30px rgba(255, 107, 157, 0.4);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 107, 157, 1),
+                             0 0 30px rgba(255, 107, 157, 0.8),
+                             0 0 50px rgba(255, 107, 157, 0.6);
+            }
+        }
+
+        /* Cake animation */
+        .cake {
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Message card styling */
+        .message-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                        0 0 40px rgba(255, 107, 157, 0.3);
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .line-break {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b9d, transparent);
+            margin: 20px 0;
+        }
+
+        .emoji-burst {
+            font-size: 3rem;
+            animation: burst 1s ease-out forwards;
+        }
+
+        @keyframes burst {
+            0% {
+                transform: scale(0) rotate(-360deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0;
+            }
+        }
+
+        /* Title styling */
+        .title-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b9d, #ffa500, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff6b9d;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .message-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .footer-text {
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-animated">
+    <!-- Floating Balloons -->
+    <div class="balloon balloon-red"></div>
+    <div class="balloon balloon-yellow"></div>
+    <div class="balloon balloon-purple"></div>
+    <div class="balloon balloon-green"></div>
+    <div class="balloon balloon-orange"></div>
+
+    <!-- Main Container -->
+    <div class="min-h-screen flex items-center justify-center p-4 relative z-10">
+        <div class="w-full max-w-2xl">
+            <!-- Header with Emojis -->
+            <div class="text-center mb-8">
+                <div class="text-6xl mb-4 space-x-2">
+                    <span class="inline-block cake">🎂</span>
+                    <span class="inline-block">🎉</span>
+                    <span class="inline-block cake">🎂</span>
+                    <span class="inline-block">🎉</span>
+                    <span class="inline-block cake">🎂</span>
+                </div>
+            </div>
+
+            <!-- Main Title -->
+            <div class="text-center mb-12">
+                <h1 class="title-main">Happy Birthday</h1>
+                <p class="subtitle glow-text">🎊 ADITYA 🎊</p>
+                <p class="text-lg font-semibold text-white mt-4 drop-shadow-lg">Our best gaming buddy! 🎮</p>
+            </div>
+
+            <!-- Message Card -->
+            <div class="message-card">
+                <!-- Main Message -->
+                <div class="text-center mb-8">
+                    <p class="text-3xl font-bold text-pink-600 mb-2">
+                        <span class="heart">❤️</span> Bhai ka Birthday Hai Mere <span class="heart">❤️</span>
+                    </p>
+                </div>
+
+                <div class="line-break"></div>
+
+                <!-- Birthday Wishes -->
+                <div class="message-text space-y-6">
+                    <p class="text-center text-xl font-semibold text-pink-500">
+                        🌟 Many Many Godly, Precious, Unbelievable, Sorted, Sweet Wishes 🌟
+                    </p>
+
+                    <p class="text-justify">
+                        May this beautiful year bring you endless happiness, joy, and all the precious moments you deserve. 
+                        You've been an incredible friend in our gaming adventures, and today we celebrate the amazing person you are! 💖
+                    </p>
+
+                    <div class="line-break"></div>
+
+                    <!-- Core Message -->
+                    <p class="text-lg font-semibold text-pink-600 text-center">
+                        ✨ Always Stay Blessed ✨
+                    </p>
+
+                    <p class="text-justify leading-relaxed">
+                        Be a person with such a beautiful aura that good people always find their way into your circle. 
+                        Your kindness, humor, and spirit light up every gaming session and every moment we share. 
+                        Continue to inspire everyone around you with your genuine warmth and authenticity. 🌈
+                    </p>
+
+                    <div class="line-break"></div>
+
+                    <!-- Inspirational Message -->
+                    <p class="italic text-center text-lg text-pink-700">
+                        "Live an inspiring life for your beloved ones"
+                    </p>
+
+                    <p class="text-justify">
+                        Your presence makes a difference. Keep shining bright, keep laughing loud, 
+                        and keep being the awesome friend that you are. The world is a better place with you in it! 🌟
+                    </p>
+
+                    <div class="line-break"></div>
+
+                    <!-- Final Wishes -->
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-pink-600 mb-4">
+                            Wishing you a Very Happy Birthday! 🎂
+                        </p>
+                        <p class="text-lg text-gray-700 mb-4">
+                            (Vegan Cake - keeping it healthy! 😁)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Celebration Emojis -->
+                <div class="text-center mt-10 text-4xl space-x-3 footer-text">
+                    <span>🎂</span>
+                    <span>🎉</span>
+                    <span>🎂</span>
+                    <span>🎉</span>
+                    <span>🎂</span>
+                    <span>🎉</span>
+                </div>
+            </div>
+
+            <!-- Bottom Emojis -->
+            <div class="text-center mt-8">
+                <div class="text-6xl space-x-4">
+                    <span class="inline-block cake">🎂</span>
+                    <span class="inline-block">🎉</span>
+                    <span class="inline-block cake">🎂</span>
+                    <span class="inline-block">🎉</span>
+                    <span class="inline-block cake">🎂</span>
+                </div>
+                <p class="text-white text-xl font-bold mt-8 drop-shadow-lg">
+                    Have the most amazing day ever, buddy! 🎮✨
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Animation Script -->
+    <script>
+        function createConfetti() {
+            const confettiPieces = 30;
+            for (let i = 0; i < confettiPieces; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.innerHTML = '🎉';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                confetti.style.opacity = Math.random() * 0.5 + 0.5;
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Trigger confetti on page load and every 5 seconds
+        window.addEventListener('load', createConfetti);
+        setInterval(createConfetti, 5000);
+
+        // Feather icons initialization
+        feather.replace();
+    </script>
+</body>
+</html>
